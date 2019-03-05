@@ -19,7 +19,7 @@ def fibonacci(steps, limit=4000000):
 
 
 # by starting with 1 and 2, the first 10 terms will be 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
-assert fibonacci(10) == [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+assert fibonacci(10, limit=10) == [1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 
 sum_of_evens = sum([i for i in fibonacci(1000) if i % 2 == 0])
 print(sum_of_evens)
