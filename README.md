@@ -1,21 +1,29 @@
 # project-euler
 
-* problem 1 - find the sum of all the multiples of 3 or 5 below 1000.
+## Solved Problems
 
-* problem 2 - by considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+1. find the sum of all the multiples of 3 or 5 below 1000.
 
-* problem 3 - what is the largest prime factor of the number 600851475143
+2. by considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-* problem 4 - find the largest palindrome made from the product of two 3-digit numbers.
+3. what is the largest prime factor of the number 600851475143
 
-* problem 5 - what is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+4. find the largest palindrome made from the product of two 3-digit numbers.
 
-* problem 6 - find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+5. what is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
-* problem 7 - what is the 10 001st prime number?
+6. find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-* problem 16 - what is the sum of the digits of the number 21000?
+7. what is the 10,001st prime number?
 
-* problem 22 - what is the total of all the name scores in the file?
+8. find the thirteen adjacent digits in the 1000-digit number that have the greatest product. what is the value of this product?
 
-* problem 48 - find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000.
+9. there exists exactly one Pythagorean triplet for which a + b + c = 1000. find the product abc.
+
+10. find the sum of all the primes below two million.
+
+16. what is the sum of the digits of the number 21000?
+
+22. what is the total of all the name scores in the file?
+
+48. find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000.

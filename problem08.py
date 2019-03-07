@@ -38,11 +38,16 @@ def n_adjacent_digits_with_greatest_product(n, num):
     group_list = []
 
     # for every digit
-    for key, digit in str(num):
+    for key, digit in enumerate(str(num)):
         digit_group = []
+        print(key, digit)
         # fetch next n-1 digits
         for offset in range(0, n):
-            digit_group.append(str(num)[key+offset])
+            try:
+                if str(num)[key+offset]:
+                    digit_group.append(int(str(num)[key+offset]))
+            except IndexError:
+                break
         # add this digit group to the list
         group_list.append(digit_group)
 
@@ -51,16 +56,18 @@ def n_adjacent_digits_with_greatest_product(n, num):
     for group in group_list:
         product = reduce(mul, group)
         if product > greatest:
-            greatest_group = product
+            greatest = product
+            greatest_group = group
 
     return greatest_group
 
 
 # The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 digits = n_adjacent_digits_with_greatest_product(4, number)
+print(digits)
 assert digits == [9, 9, 8, 9]
 assert reduce(mul, digits) == 5832
 
-digits = n_adjacent_digits_with_greatest_product(4, number)
+digits = n_adjacent_digits_with_greatest_product(13, number)
 print(digits)
 print(reduce(mul, digits))
