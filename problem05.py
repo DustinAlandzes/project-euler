@@ -2,6 +2,7 @@
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
 
+
 def smallest_number_evenly_divisible_by_all_numbers_up_to(num):
     all_numbers = range(1, num)
     current_number = 1

@@ -26,13 +26,12 @@ def is_pythagorean_triplet(triplet):
 def pythagorean_triplets():
     '''
     A generator that filters a list of all triplets
-    and yields the pythagorean triplets
+    and yields the pythagorean triplets one at a time
     '''
     # generate all triplets from 0, 0, 0 to 9, 9, 9
     # list of tuples: [(0, 0, 0), (0, 0, 1), ..., (9, 9, 9)]
     triplets = combinations_with_replacement(range(1, 1000), 3)
 
-    # filter for triplets
     for triplet in triplets:
         # if a < b < c and a^2 + b^2 = c^2
         if is_pythagorean_triplet(triplet):

@@ -17,6 +17,7 @@ def upper_bound_on_nth_prime(n):
     else:
         return floor(n * log(n * log(n)))
 
+
 def sieve_of_eratosthenes(limit):
     '''
     Sieve of Eratosthenes
@@ -33,6 +34,7 @@ def sieve_of_eratosthenes(limit):
             numbers.discard(j)
 
     return sorted(numbers)
+
 
 def nth_prime(n):
     # Make sure that the input makes sense
