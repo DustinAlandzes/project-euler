@@ -22,9 +22,14 @@ assert fibonacci(10) == 55
 assert fibonacci(11) == 89
 assert fibonacci(12) == 144
 
-number = 100000
+number = 1
 digits = 1
-while digits != 1000:
-    print(fibonacci(number))
-    digits == len(str(fibonacci(number)))
+prev = 1
+cur = 0
+
+while len(str(cur)) != 1000:
     number += 1
+    # Advance the Fibonacci sequence by one step
+    prev, cur = cur, prev + cur
+
+print(number, cur)

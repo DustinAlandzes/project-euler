@@ -2,23 +2,49 @@
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 '''
 
-
-def is_perfect_number(n):
+def divisors(n):
     '''
+    takes integer n
+
+    returns list of integers
+    who evenly divide by n
     '''
+    proper_divisors = []
+    for x in range(1, n // 2 + 1):
+        if not (n % x):
+            proper_divisors.append(x)
+    print("divisors of ", n)
+    return proper_divisors
 
 
-def is_abundant_number(n):
-    '''
-    A number n is called deficient if the sum of its proper divisors is less than n
-    and it is called abundant if this sum exceeds n.
-    '''
-
-
-def is_sum_of_abundant_numbers(n):
+def abundant_numbers():
     '''
     By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers.
     '''
+    abundant_numbers = []
+    for n in range(28123, 1, -1):
+        if sum(divisors(n)) > n:
+            abundant_numbers.append(n)
+    print("generated abundant numbers")
+    return abundant_numbers
 
-# As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16,
-# the smallest number that can be written as the sum of two abundant numbers is 24
+def sums_of_abundant_numbers():
+    sums = set()
+    abundant = abundant_numbers()
+    for x in abundant:
+        for y in abundant:
+            if (x + y) < 28123:
+                sums.add(x + y)
+    print("generated sums of abundant numbers")
+    return sums
+
+def sum_of_non_abundant_numbers():
+    sums = sums_of_abundant_numbers()
+    result = 0
+    for n in range(28123):
+        if n not in sums:
+            result += n
+    return result
+
+# O(n^5)
+print(sum_of_non_abundant_numbers())
