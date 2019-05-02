@@ -7,7 +7,7 @@ import math
 def is_prime(num):
   # type(int) -> bool
   """
-  returns primality of num
+  returns primality of number
   """
   if num < 2:
     return False
@@ -32,7 +32,7 @@ def equation(a, b, n):
   return n**2 + a*n + b
 
 
-def number_of_primes(a, b):
+def number_of_primes(a: int, b: int):
   # type: (int, int)
   """
   returns number of primes 
