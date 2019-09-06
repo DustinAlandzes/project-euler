@@ -1,15 +1,7 @@
-'''
-load p022_names.txt a 46K text file containing over five-thousand first names
-sort it into alphabetical order
-get name score of each name
-sum score of each name
-'''
-
-
 def load_file():
-    '''
+    """
     loads and processes p022_names.txt
-    '''
+    """
     text_file = open("p022_names.txt", "r")
     # read file, remove double quotes, split into list by comma, sort alphabetically
     names = sorted(text_file.read().replace('\"', "").split(','))
@@ -17,28 +9,28 @@ def load_file():
 
 
 def position_on_list(str, list_of_names):
-    '''
+    """
     given a string and list of strings
     returns position of string in the list
-    '''
+    """
     for i, name in enumerate(list_of_names):
         if str == name:
-            return i+1
+            return i + 1
     return False
 
 
 def alphabetal_position(letter):
-    '''
+    """
     returns alphabetical position of character
-    '''
+    """
     return ord(letter) - 64
 
 
 def alphabetical_value(name):
-    '''
+    """
     given a string
     returns the sum of the alphebetical position of each character
-    '''
+    """
     value = 0
     for letter in name:
         value += alphabetal_position(letter)
@@ -46,10 +38,10 @@ def alphabetical_value(name):
 
 
 def name_score(name, list_of_names):
-    '''
+    """
     given a string and list of strings
     returns product of string's position on the list, and "alphabetical value" of the string
-    '''
+    """
     return position_on_list(name, list_of_names) * alphabetical_value(name)
 
 
@@ -64,6 +56,13 @@ def get_sum_of_all_scores(list_of_names):
     return sum(scores)
 
 
-names = load_file()
-assert name_score("COLIN", names) == 49714
-print(get_sum_of_all_scores(names))
+if __name__ == "__main__":
+    names = load_file()
+    assert name_score("COLIN", names) == 49714
+    """
+    load p022_names.txt a 46K text file containing over five-thousand first names
+    sort it into alphabetical order
+    get name score of each name
+    sum score of each names
+    """
+    print(get_sum_of_all_scores(names))

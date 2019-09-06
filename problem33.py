@@ -11,6 +11,7 @@ containing two digits in the numerator and denominator
 http://mathworld.wolfram.com/AnomalousCancellation.html
 
 """
+import time
 from fractions import Fraction
 
 
@@ -46,8 +47,10 @@ def get_digit_canceling_fractions():
 
 if __name__ == "__main__":
     # get product of fractions
+    start_time = time.time()
     product = 1
     fractions = get_digit_canceling_fractions()
     for fraction in fractions:
         product *= fraction
     print(product.denominator, product, fractions)
+    print(time.time() - start_time)

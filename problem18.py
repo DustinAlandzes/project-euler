@@ -22,19 +22,21 @@ However, Problem 67, is the same challenge with a triangle containing one-hundre
 it cannot be solved by brute force, and requires a clever method! ;o)
 '''
 
+
 def maximum_total(triangle):
     return 23
 
-triangle1 = '''
+
+triangle1 = """
 3
 7 4
 2 4 6
 8 5 9 3
-'''
+"""
 
 assert maximum_total(triangle1) == 23
 
-triangle2 = '''
+triangle2 = """
 75
 95 64
 17 47 82
@@ -50,6 +52,6 @@ triangle2 = '''
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
-'''
+"""
 
 print(maximum_total(triangle2))

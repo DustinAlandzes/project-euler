@@ -1,8 +1,7 @@
-'''
-What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-'''
+from tools import measure_execution_time
 
 
+@measure_execution_time
 def smallest_number_evenly_divisible_by_all_numbers_up_to(num):
     all_numbers = range(1, num)
     current_number = 1
@@ -18,7 +17,12 @@ def smallest_number_evenly_divisible_by_all_numbers_up_to(num):
 
     return current_number
 
-# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-assert smallest_number_evenly_divisible_by_all_numbers_up_to(10) == 2520
 
-print(smallest_number_evenly_divisible_by_all_numbers_up_to(20))
+if __name__ == "__main__":
+    # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    assert smallest_number_evenly_divisible_by_all_numbers_up_to(10) == 2520
+
+    """
+    What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    """
+    print(smallest_number_evenly_divisible_by_all_numbers_up_to(20))

@@ -1,5 +1,9 @@
 from typing import List
 
+from tools import measure_execution_time
+
+
+@measure_execution_time
 def numbers_that_can_be_written_as_sum_of_nth_powers(n: int) -> List:
     """
     return list of numbers that can be written as the sum of of the nth power of their digits
@@ -14,10 +18,11 @@ def numbers_that_can_be_written_as_sum_of_nth_powers(n: int) -> List:
             numbers.append(x)
     return numbers
 
-assert numbers_that_can_be_written_as_sum_of_nth_powers(4) == [1634, 8208, 9474]
-assert sum(numbers_that_can_be_written_as_sum_of_nth_powers(4)) == 19316
 
-numbers = numbers_that_can_be_written_as_sum_of_nth_powers(5)
-print(numbers)
-print(sum(numbers))
+if __name__ == "__main__":
+    assert numbers_that_can_be_written_as_sum_of_nth_powers(4) == [1634, 8208, 9474]
+    assert sum(numbers_that_can_be_written_as_sum_of_nth_powers(4)) == 19316
 
+    numbers = numbers_that_can_be_written_as_sum_of_nth_powers(5)
+    print(numbers)
+    print(sum(numbers))

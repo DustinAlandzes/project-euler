@@ -1,6 +1,5 @@
-'''
-Evaluate the sum of all the amicable numbers under 10000.
-'''
+from tools import measure_execution_time
+
 
 def divisors(n):
     '''
@@ -24,6 +23,7 @@ def d(n):
     return sum(divisors(n))
 
 
+@measure_execution_time
 def amicable_numbers_up_to(n):
     '''
     If d(a) = b and d(b) = a, where a != b,
@@ -40,11 +40,16 @@ def amicable_numbers_up_to(n):
 
     return amicable_numbers
 
-assert divisors(220) == [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]
-assert d(220) == 284
 
-assert divisors(284) == [1, 2, 4, 71, 142]
-assert d(284) == 220
+if __name__ == "__main__":
+    assert divisors(220) == [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110]
+    assert d(220) == 284
 
-print(amicable_numbers_up_to(10000))
-print(sum(amicable_numbers_up_to(10000)))
+    assert divisors(284) == [1, 2, 4, 71, 142]
+    assert d(284) == 220
+
+    print(amicable_numbers_up_to(10000))
+    """
+    Evaluate the sum of all the amicable numbers under 10000.
+    """
+    print(sum(amicable_numbers_up_to(10000)))

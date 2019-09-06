@@ -1,7 +1,6 @@
 from math import log, floor
-'''
-What is the 10 001st prime number?
-'''
+
+from tools import measure_execution_time
 
 
 def upper_bound_on_nth_prime(n):
@@ -36,6 +35,7 @@ def sieve_of_eratosthenes(limit):
     return sorted(numbers)
 
 
+@measure_execution_time
 def nth_prime(n):
     # Make sure that the input makes sense
     if n < 1:
@@ -51,10 +51,14 @@ def nth_prime(n):
     return primes[n - 1]
 
 
-'''
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13,
-we can see that the 6th prime is 13.
-'''
-assert nth_prime(6) == 13
+if __name__ == "__main__":
+    """
+    By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13,
+    we can see that the 6th prime is 13.
+    """
+    assert nth_prime(6) == 13
 
-print(nth_prime(10001))
+    """
+    What is the 10,001st prime number?
+    """
+    print(nth_prime(10001))

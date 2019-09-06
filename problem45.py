@@ -29,6 +29,6 @@ for x_index, x in triangles:
     for y_index, y in pentagonals:
         for z_index, z in hexagonals:
             if x == y and y == z:
-                numbers.append(x_index, y_index, z_index)
+                numbers.append((x_index, y_index, z_index))
 
 print(numbers)

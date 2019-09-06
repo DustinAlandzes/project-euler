@@ -1,4 +1,5 @@
-from timeit import timeit
+from tools import measure_execution_time
+
 """
 There are eight coins: 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p)
 
@@ -38,9 +39,9 @@ with the base cases:
  * C(N, m) = 0, N >= 1, m <= 0 (no solution, no coins)
 """
 
-coins_in_circulation = [1, 2, 5, 10, 20, 50, 100, 200]
 
-def brute_force(n=200):
+@measure_execution_time
+def brute_force(n=200, coins=[]):
     ways = dict()
     # start at 1
     ways[0] = 1
@@ -57,5 +58,7 @@ def brute_force(n=200):
 
 # todo recursive, dp
 
+
 if __name__ == "__main__":
-    print(brute_force(200))
+    coins_in_circulation = [1, 2, 5, 10, 20, 50, 100, 200]
+    print(brute_force(200, coins_in_circulation))
