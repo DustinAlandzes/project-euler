@@ -1,7 +1,5 @@
 from problem42 import triangle_numbers
-
-def pentagonal_numbers(n):
-    return (n * (3 * n - 1)) // 2
+from problem44 import pentagonal_numbers
 
 
 def hexagonal_numbers(n):
