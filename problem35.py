@@ -16,7 +16,7 @@ if __name__ == "__main__":
         all_prime_digits = True
 
         # start with tens digit
-        number = prime / 10
+        number = prime // 10
 
         # looping through digits
         while number:
