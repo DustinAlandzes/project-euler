@@ -37,3 +37,24 @@ def combinations(list_of_items):
     for count in char_counts:
         denominator *= factorial(char_counts[count])  # n_1! * n_2! * ... * n_k!
     return numerator // denominator
+
+
+'''
+actually just use @functools.lru_cache()
+def memoize(f):
+    """
+    decorator that caches results of the function f
+
+    from: https://www.python-course.eu/python3_memoization.php
+
+    :param f: function whose results you want to cache
+    :return: function that checks if result for x is already cached, if not compute it and cache
+    """
+    memo = {}
+
+    def helper(x):
+        if x not in memo:
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+'''
